@@ -22,7 +22,7 @@ const BookForm = ({ addBook }) => {
   return (
 
     <form  onSubmit={handleSubmit}>
-      <label className='text-[yellow]'>
+      <label className='text-[red]'>
         Booksss Name:
         <input  className=""
          type="text" value={name} onChange={(e) => setName(e.target.value)} />
