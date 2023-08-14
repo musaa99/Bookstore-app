@@ -1,5 +1,4 @@
 import React from 'react';
-import 'tailwindcss/tailwind.css';
 
 const Book = ({ name, author, year }) => {
     const [books, setBooks] = useState([

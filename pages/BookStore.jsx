@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import BookForm from './component/BookForm';
 import BookList from './component/BookList';
-import 'tailwindcss/tailwind.css';
 
 
 const BookstoreApp = () => {
@@ -20,7 +19,7 @@ const BookstoreApp = () => {
 
   return (
     <div className=''>
-      <h1 className=''>Bookstores App</h1>
+      <h1 className='text-center'>Bookstores App</h1>
       <BookForm addBook={addBook} />
       <BookList books={books} deleteBook={deleteBook} />
     </div>

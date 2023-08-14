@@ -1,13 +1,12 @@
 import React from 'react';
-import 'tailwindcss/tailwind.css';
 
 const BookList = ({ books, deleteBook }) => {
   return (
     <ul>
       {books.map((book, index) => (
-          <div className='booklist' key={index}>
+          <div className='text-center' key={index}>
           <div>{book.name} by {book.author} ({book.year})</div>
-          <button onClick={() => deleteBook(index)}>Delete</button>
+          <button className='flex  text-center m-auto bg-[red] rounded-[50px] px-4' onClick={() => deleteBook(index)}>Delete</button>
         </div>
       ))}
     </ul>
