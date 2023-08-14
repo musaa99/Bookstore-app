@@ -1,6 +1,5 @@
 "use client"; // This is a client component
 import React, { useState } from 'react';
-import 'tailwindcss/tailwind.css';
 
 
 const BookForm = ({ addBook }) => {
@@ -22,7 +21,7 @@ const BookForm = ({ addBook }) => {
   return (
 
     <form  onSubmit={handleSubmit}>
-      <label className='text-[red]'>
+      <label className='text-[green]'>
         Booksss Name:
         <input  className=""
          type="text" value={name} onChange={(e) => setName(e.target.value)} />

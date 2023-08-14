@@ -1,5 +1,4 @@
 import React from 'react';
-import 'tailwindcss/tailwind.css';
 
 const BookList = ({ books, deleteBook }) => {
   return (

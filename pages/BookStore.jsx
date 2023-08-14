@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import BookForm from './component/BookForm';
 import BookList from './component/BookList';
-import 'tailwindcss/tailwind.css';
 
 
 const BookstoreApp = () => {
