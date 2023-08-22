@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import BookForm from './component/BookForm';
 import BookList from './component/BookList';
+import Header from './header';
 
 
 const BookstoreApp = () => {
@@ -19,7 +20,7 @@ const BookstoreApp = () => {
 
   return (
     <div className=''>
-      <h1 className='text-center'>Bookstores App</h1>
+      <Header/>
       <BookForm addBook={addBook} />
       <BookList books={books} deleteBook={deleteBook} />
     </div>
