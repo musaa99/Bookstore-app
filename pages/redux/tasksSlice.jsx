@@ -1,26 +1,51 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+// export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const users = await response.json();
+//   return users;
+// });
 
 const tasksSlice = createSlice({
-  name: 'tasks',
-  initialState,
+  name: "books",
+  initialState: {
+    entities: [],
+    loading: false,
+  },
   reducers: {
-    addTask: (state, action) => {
+    addBooks(state, action) {
       state.push(action.payload);
     },
-    updateTask: (state, action) => {
-      const index = state.findIndex(task => task.id === action.payload.id);
-      if (index !== -1) {
-        state[index] = action.payload;
+    userUpdated(state, action) {
+      const { id, name, email } = action.payload;
+      const existingUser = state.find((user) => user.id === id);
+      if (existingUser) {
+        existingUser.name = name;
+        existingUser.email = email;
       }
     },
-    deleteTask: (state, action) => {
-      return state.filter(task => task.id !== action.payload);
+    userDeleted(state, action) {
+      const { id } = action.payload;
+      const existingUser = state.find((user) => user.id === id);
+      if (existingUser) {
+        state = state.filter((user) => user.id !== id);
+      }
     },
   },
+  // extraReducers: {
+  //   [fetchUsers.pending]: (state, action) => {
+  //     state.loading = true;
+  //   },
+  //   [fetchUsers.fulfilled]: (state, action) => {
+  //     state.loading = false;
+  //     state.entities = [...state.entities, ...action.payload];
+  //   },
+  //   [fetchUsers.rejected]: (state, action) => {
+  //     state.loading = false;
+  //   },
+  // },
 });
 
-export const { addTask, updateTask, deleteTask } = tasksSlice.actions;
+export const { userAdded, userUpdated, userDeleted } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
