@@ -4,14 +4,15 @@ import React from 'react';
 const Header = () => {
   return (
     <header className='text-center'>
-      <h1>Book Management App</h1>
-      <hr />
-      <div className="flex justify-center items-center">
-        <div to="/" className="link" activeClassName="active" exact>
-          Books List
+      <div className="row">
+        <h1>Book Store app</h1>
+      </div>
+      <div className="flex justify-center gap-[10px]" >
+        <div className="">
+          <button className="bg-[blue] rounded px-2">Load Book</button>
         </div>
-        <div to="/add" className="link" activeClassName="active">
-          Add Book
+        <div className="">
+          <button className="bg-[blue] rounded px-2">Add Book</button>
         </div>
       </div>
     </header>

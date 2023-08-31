@@ -1,5 +1,6 @@
 "use client"; // This is a client component
 import React, { useState } from 'react';
+import { AddBook } from './component/addBook';
 import BookForm from './component/BookForm';
 import BookList from './component/BookList';
 import Header from './header';
@@ -20,9 +21,10 @@ const BookstoreApp = () => {
 
   return (
     <div className=''>
-      <Header/>
-      <BookForm addBook={addBook} />
-      <BookList books={books} deleteBook={deleteBook} />
+      {/* <Header/> */}
+      <AddBook/>
+      {/* <BookForm addBook={addBook} /> */}
+      {/* <BookList books={books} deleteBook={deleteBook} /> */}
     </div>
   );
 };
