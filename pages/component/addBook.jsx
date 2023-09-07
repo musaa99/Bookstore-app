@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { addBooks } from "../redux/tasksSlice";
+import { addBooks } from "../redux/booksSlice";
 
 export function AddBook() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export function AddBook() {
       );
 
       setError(null);
-      router.push("/");
+      router.push("/Booklist");
     } else {
       setError("Fill in all fields");
     }
